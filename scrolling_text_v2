@@ -49,8 +49,6 @@ function scroll_text()
 
   -- Set the starting y position for the text
   y = 0
-  -- Center the text on screen
-  x = (240 - #text * 4) / 2
 
   -- Print the text with scrolling effect
   -- adjusting the y position based on time elapsed
