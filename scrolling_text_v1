@@ -1,0 +1,27 @@
+-- title:  Scrolling Text
+-- author: LegoDinoMan
+-- desc:   An example of scrolling text
+-- script: Lua
+
+scroll_speed=1
+t=0
+
+function TIC()
+  cls() 
+  
+  print([[
+		I wrote this to let you know
+		if you ever get better,
+		I'll be waiting for you
+		on the other side.
+		
+		I'll wait,
+		to show you
+		I was right
+		and  you were strong,
+		in the end.
+		]],
+		0,140-t*scroll_speed,4)
+
+		t=time()/60
+end
