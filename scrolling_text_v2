@@ -1,0 +1,64 @@
+-- Title: Scrolling Text V2
+-- Author: LegoDinoMan
+-- Description: The second version of scrolling text script
+-- Script: Lua
+-- Date: 05/07/2023 - MM/DD/YYYY
+-- Version 1.0
+
+-- Define a function to split the text into 
+-- individual lines and calculate the height in pixels
+function get_text_height(text)
+  -- Create an empty table to store the individual lines
+  local lines = {}
+  -- Iterate through each line of text 
+  -- and insert it into the table
+  for line in text:gmatch("[^\r\n]+") do
+    table.insert(lines, line)
+  end
+
+  -- Calculate and return the height 
+  -- in pixels of the text, plus 136
+  --  to account for the resolution
+  return (#lines * 8) + 136
+end
+
+-- Define a function to print the scrolling text
+function scroll_text()
+  -- Set the text to be displayed
+  text = [[
+  This is an example of generic text
+  that could be used in any situation.
+
+  Feel free to customize this text to
+  suit your needs!
+  
+  << Copy and paste this line a dozen times>>
+  ]]
+
+  -- Get the height of the text in pixels
+  f = get_text_height(text)
+  -- Calculate the time elapsed
+  t = time() / 80
+  -- If t is greater than the height of the text
+  -- clear the screen
+  q = t > f or cls()
+  -- The speed of the text in pixels
+  speed = 1.5
+  -- The color of the text
+  color = 4
+
+  -- Set the starting y position for the text
+  y = 0
+  -- Center the text on screen
+  x = (240 - #text * 4) / 2
+
+  -- Print the text with scrolling effect
+  -- adjusting the y position based on time elapsed
+  print(text, 0, 150 - t * speed, color)
+end
+
+-- Define the TIC() function that runs every frame
+function TIC()
+  -- Call the scroll_text() function
+  scroll_text()
+end
