@@ -1,9 +1,9 @@
--- Title: Scrolling Text V2
--- Author: LegoDinoMan
--- Description: The second version of scrolling text script
--- Script: Lua
--- Date: 05/07/2023 - MM/DD/YYYY
--- Version 1.0
+-- title: Scrolling Text V2
+-- author: LegoDinoMan
+-- description: The second version of scrolling text script
+-- script: Lua
+-- date: 05/07/2023 - MM/DD/YYYY
+-- version 1.0
 
 -- Define a function to split the text into 
 -- individual lines and calculate the height in pixels
